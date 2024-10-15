@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
 /**
  * Base Route
  */
 router.get('/', function (req, res) {
-    res.send('Index.js works.')
-});
+    res.send(req.user ? `Logged in as ${req.user.username}` : `You are not logged in.`);
+})
 
 /**
  * Extended Routes
@@ -20,18 +21,18 @@ router.use('/api-docs', require('./swagger'));
  * Login Routes
  */
 
-// router.get('/login', passport.authenticate('github'));
-//
-//
-// router.get('/logout', (req, res, next) => {
-//     req.logout((err) => {
-//         if (err) return next(err);
-//         req.session.destroy((error) => {
-//             if (error) return next(error);
-//             res.send('You have been logged out.');
-//         });
-//     });
-// });
+router.get('/login', passport.authenticate('github'));
+
+
+router.get('/logout', (req, res, next) => {
+    req.logout((err) => {
+        if (err) return next(err);
+        req.session.destroy((error) => {
+            if (error) return next(error);
+            res.redirect('/');
+        });
+    });
+});
 
 module.exports = router;
 
