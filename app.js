@@ -16,7 +16,6 @@ const {fishForErrors} = require("./handlers/errorHandlers");
 
 //TODO: Create DB credentials
 //TODO: Setup User Login session stuff
-//TODO: Get the app to simply start and load
 //TODO: Setup Swagger documentation
 
 
