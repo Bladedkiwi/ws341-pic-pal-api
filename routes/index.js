@@ -5,7 +5,7 @@ const router = express.Router();
  * Base Route
  */
 router.get('/', function (req, res) {
-    res.send('I work.')
+    res.send('Index.js works.')
 });
 
 /**
@@ -32,4 +32,6 @@ router.use('/api-docs', require('./swagger'));
 //         });
 //     });
 // });
+
+module.exports = router;
 

@@ -3,7 +3,7 @@
  *
  * Takes any function passed through and behaves like a try/catch.
  * @param givenFunction Ones passed through like those from the controllers
- * @returns {function(*, *, *): Promise<any>}
+ * @returns {function(*, *, *): Promise<any>} Naturally, It only works with functions including a callback or async
  */
 exports.fishForErrors = (givenFunction) => {
     return function(req, res, next)

@@ -10,8 +10,9 @@ require('./models/Destination');
 require('./models/Photo');
 require('./models/User');
 require('./models/Review');
+const {fishForErrors} = require("./handlers/errorHandlers");
 
-const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.MONGO_URL}`
+// const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.MONGO_URL}`
 
 //TODO: Create DB credentials
 //TODO: Setup User Login session stuff
@@ -28,6 +29,7 @@ app
         origin: '*',
     }))
     .use('/', require('./routes/index'))
+
     //Errors Middleware
     .use(errorHandlers.notFound)
     .use(errorHandlers.formatErrors)
@@ -36,7 +38,7 @@ app
 /**
  * Establish Connection with Database
  */
-app.listen(process.env.PORT, async () => {
+app.listen(process.env.PORT || 3000, async () => {
     console.log(`Server running on port ${process.env.PORT || 3000}`);
-    await connectDatabase(uri);
+    // await connectDatabase(uri);
 });
