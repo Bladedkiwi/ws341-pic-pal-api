@@ -14,6 +14,9 @@ const mongoose = require('mongoose');
  *
  */
 
+//TODO: https://stackoverflow.com/questions/18001478/referencing-another-schema-in-mongoose
+
+
 const destinationSchema = new mongoose.Schema({
     //TODO: Same thing with city - if that's possible. Maybe throw in a custom function that calls an outside api to check. An idea at least
     city: String,
