@@ -12,7 +12,7 @@ require('./models/User');
 require('./models/Review');
 const {fishForErrors} = require("./handlers/errorHandlers");
 
-// const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.MONGO_URL}`
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.MONGO_URL}`
 
 //TODO: Create DB credentials
 //TODO: Setup User Login session stuff
@@ -39,5 +39,5 @@ app
  */
 app.listen(process.env.PORT || 3000, async () => {
     console.log(`Server running on port ${process.env.PORT || 3000}`);
-    // await connectDatabase(uri);
+    await connectDatabase(uri);
 });
