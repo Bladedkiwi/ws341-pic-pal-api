@@ -46,12 +46,15 @@ const userSchema = new mongoose.Schema({
             message: 'Must include a special character, number, and a capital'
     },
         // TODO: Check that this is the right way to define an array of objects for mongoose
-        destinations: [Object],
-        photos: [Object],
-        reviews: [Object],
+        destinations: String,
+        photos: String,
+        reviews: String,
 
     }
-})
+}, {
+    collection: 'user',
+    }
+    )
 
 userSchema.pre('save', async function (next) {
     console.log('Pre Save has been initialized');

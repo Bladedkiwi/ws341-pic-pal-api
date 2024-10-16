@@ -40,7 +40,8 @@ async function getUserById(req,res) {
  * @returns {Promise<void>}
  */
 async function createUser(req,res) {
-    const user = await User.save();
+    const user = new User(req.body);
+    await user.save();
     res.status(200).send(user);
 }
 
