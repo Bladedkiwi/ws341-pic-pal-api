@@ -23,9 +23,13 @@ const destinationSchema = new mongoose.Schema({
     // TODO: Set any restrictions needed to make sure this is a country
     country: String,
     //TODO: Check that this is right
-    photo:[Object],
+    photo:[String],
     tourismSpots:[String],
-    reviews: [Object]
-})
+    reviews: [String]
+},
+    {
+        collection: 'destination',
+    }
+    )
 
 module.exports = mongoose.models.Destination || mongoose.model('Destination', destinationSchema);

@@ -1,0 +1,128 @@
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "firstName": "Ldwig",
+  "lastName": "Beeoven",
+  "email": "ludwig.beven@example.com",
+  "password": "123a*N183",
+  "savedDestinations": [],
+  "photos": [],
+  "reviews": []
+}
+
+###
+
+POST http://localhost:3000/review
+Content-Type: application/json
+
+{
+  "comments": "I enjoysddfsdf it every minute, I would come back forever",
+  "stars": 5,
+  "user": "670f03ssddsf4a437a62d1798ba87"
+}
+
+###
+POST http://localhost:3000/photo
+Content-Type: application/json
+
+{
+  "title": "To Tower at Dusk",
+  "photo": "http://exddddsample.com/photos/tokyo_tower_dusk.jpg",
+  "description": "The iconic Tokyo Tower illuminated against the evening sky, showcasing the city's vibrant nightlife."
+}
+
+###
+POST http://localhost:3000/destination
+Content-Type: application/json
+
+{
+  "city": "Chicago",
+  "country": "France",
+  "photos": [],
+  "description": "The city of France, known for its art, fashion, and culture, featuring iconic landmarks.",
+  "tourismSpots": [
+    "Eiffel Tower",
+    "Louvre Museum",
+    "Notre-Dame Cathedral"
+  ],
+  "reviews": []
+}
+
+###
+PUT http://localhost:3000/destination/6711c86c748fab8805238c57
+Content-Type: application/json
+
+{
+  "city": "Chicago",
+  "country": "France",
+  "photo": [],
+  "tourismSpots": [
+    "Eiffel Tower",
+    "Louvre Museum",
+    "Notre-Dame Cathedral",
+    "Dog Park"
+  ],
+  "reviews": []
+}
+
+###
+PUT http://localhost:3000/photo/
+Content-Type: application/json
+
+
+###
+PUT http://localhost:3000/review/
+Content-Type: application/json
+
+###
+PUT http://localhost:3000/user/
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/destination/
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/review/
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/photo/
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/user/
+Content-Type: application/json
+
+###
+GET http://localhost:3000/destination/
+Content-Type: application/json
+
+###
+GET http://localhost:3000/review/
+Content-Type: application/json
+
+###
+GET http://localhost:3000/photo/
+Content-Type: application/json
+
+###
+GET http://localhost:3000/user/
+Content-Type: application/json
+
+###
+GET http://localhost:3000/destination/6711c86c748fab8805238c57
+Content-Type: application/json
+
+###
+GET http://localhost:3000/review/6711c86c748fab8805238c57
+Content-Type: application/json
+
+###
+GET http://localhost:3000/photo/6711c86c748fab8805238c57
+Content-Type: application/json
+
+###
+GET http://localhost:3000/user/6711c86c748fab8805238c57
+Content-Type: application/json

@@ -18,5 +18,12 @@ const photoSchema = new mongoose.Schema({
     imgUrl: String,
     // TODO: Set a max string character amount
     imgAlt:String,
-    description: String
-})
+    description: String,
+},
+    {
+        collection: 'photo',
+    }
+
+    )
+
+module.exports = mongoose.models.Photo || mongoose.model('Photo', photoSchema);

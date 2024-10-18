@@ -20,7 +20,6 @@ const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process
 
 //TODO: Create DB credentials
 //TODO: Setup User Login session stuff
-//TODO: Get the app to simply start and load
 //TODO: Setup Swagger documentation
 
 
