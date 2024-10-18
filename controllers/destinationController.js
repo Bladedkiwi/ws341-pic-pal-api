@@ -41,7 +41,8 @@ async function getDestinationById(req,res) {
  * @returns {Promise<void>}
  */
 async function createDestination(req,res) {
-    const destination = await Destination.save();
+    const destination = new Destination(req.body);
+    await destination.save();
     res.status(200).send(destination);
 }
 

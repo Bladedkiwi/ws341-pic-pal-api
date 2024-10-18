@@ -18,8 +18,15 @@ const reviewSchema = new mongoose.Schema({
     userId: String,
     username: String,
     // TODO: Adjust this to be a required max of 5 stars
-    stars: Number,
+    stars: {
+        type: Number,
+        maxLength: 5
+    },
     comments: String
-});
+},
+    {
+        collection: 'review',
+    }
+);
 
 module.exports = mongoose.models.Review || mongoose.model('Review', reviewSchema);

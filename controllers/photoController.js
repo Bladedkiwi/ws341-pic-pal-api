@@ -42,7 +42,8 @@ async function getPhotoById(req,res) {
  * @returns {Promise<void>}
  */
 async function createPhoto(req,res) {
-    const photo = await Photo.save();
+    const photo = new Photo(req.body);
+    await photo.save();
     res.status(200).send(photo);
 }
 

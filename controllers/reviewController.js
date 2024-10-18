@@ -38,7 +38,8 @@ async function getReviewById(req,res) {
  * @returns {Promise<void>}
  */
 async function createReview(req,res) {
-    const review = await Review.save();
+    const review = new Review(req.body);
+    await review.save();
     res.status(200).send(review);
 }
 
