@@ -20,17 +20,17 @@ Content-Type: application/json
 }
 
 ### PUT edit user
-PUT http://localhost:3000/user/67133ee10d1a562513baa581 HTTP/1.1
+PUT http://localhost:3000/user/67140e0aa6e6b0bacbb325d6 HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": "TEST",
-  "lastName": "TEST",
-  "email": "na@na.com",
-  "password": "$%&#asd333WagnerOnTheRun!",
-  "savedDestinations": [],
-  "photos": ["hi"],
-  "reviews": []
+  "gitHubId": "55414196",
+  "username": "Bladedkiwi",
+  "email": "bladedkiwi@byui.edu",
+  "destinationPhotos": ["Here's a thing", "Here's a second thing"],
+  "userPhotos": ["A photo object here", "And another"],
+  "reviews": [],
+  "__v": 0
 }
 
 ### Delete User 
