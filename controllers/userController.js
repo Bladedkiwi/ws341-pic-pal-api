@@ -13,6 +13,7 @@ const User = require('../models/User');
  * @param res Array of Users
  * @returns {Promise<void>}
  */
+//#swagger.tags=['user']
 async function getUsers(req,res){
     const user = await User.find();
     if (user) {
@@ -27,6 +28,7 @@ async function getUsers(req,res){
  * @param res User
  * @returns {Promise<void>}
  */
+//#swagger.tags=['user']
 async function getUserById(req,res) {
     const user = await User.findById(req.params.id);
     res.status(200).send(user);
@@ -39,6 +41,7 @@ async function getUserById(req,res) {
  * @param res Returns created User
  * @returns {Promise<void>}
  */
+//#swagger.tags=['user']
 async function createUser(req,res) {
     const user = new User(req.body);
     await user.save();
@@ -52,6 +55,7 @@ async function createUser(req,res) {
  * @param res Displays message upon success/failure
  * @returns {Promise<void>}
  */
+//#swagger.tags=['user']
 async function updateUser(req,res) {
     const user = await User.findByIdAndUpdate(
         req.params.id,
@@ -73,6 +77,7 @@ async function updateUser(req,res) {
  * @param res Displays message upon success/failure
  * @returns {Promise<void>}
  */
+//#swagger.tags=['user']
 async function deleteUser(req,res) {
     const user = await User.findByIdAndDelete(req.params.id);
     !user ?
