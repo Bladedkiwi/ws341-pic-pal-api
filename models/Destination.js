@@ -22,7 +22,6 @@ const destinationSchema = new mongoose.Schema({
     city: String,
     // TODO: Set any restrictions needed to make sure this is a country
     country: String,
-    //TODO: Check that this is right
     photo:[String],
     tourismSpots:[String],
     reviews: [String]
