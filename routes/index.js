@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 /**
  * Extended Routes
  */
-
+router.use("/", require("./swagger"));
 router.use('/user', require('./user'));
 router.use('/destination', require('./destination'));
 router.use('/api-docs', require('./swagger'));
