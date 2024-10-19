@@ -75,27 +75,26 @@ GET http://localhost:3000/photo
 ### GET specific Photo
 GET http://localhost:3000/photo/6713bda5ec0d1b2f6f2454ed
 
-### POST Photo            
-////////////////////////////////////////////////////////////
-////////////////////ERROR Placing Link//////////////////////
-////////////////////////////////////////////////////////////
+### POST Photo
 POST http://localhost:3000/photo HTTP/1.1
 Content-Type: application/json
 
 {
  "title": "My Cat",
-  "photo": "https://placecats.com/neo_banana/300/200",
+  "imgUrl":"https://placecats.com/neo_banana/300/200",
+  "imgAlt": "Two dogs named Neo and Banana",
   "description": "Photo of Neo and Banana such good boys"
 }
 
 ### PUT edit user
-PUT http://localhost:3000/photo/6713bda5ec0d1b2f6f2454ed HTTP/1.1
+PUT http://localhost:3000/photo/6713e1f549cfc8249e9c4aad HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "My Cat",
-    "photo": "https://test.link.com",
-    "description": "Photo of Neo and Banana such good boys"
+  "title": "My Cat",
+  "imgUrl":"https://placecats.com/neo_banana/300/200",
+  "imgAlt": "Two dogs named Neo and Banana",
+  "description": "Photo of Neo and Banana such good boys"
 }
 
 ### Delete User 
