@@ -1,0 +1,47 @@
+[
+  {
+    "firstName": "Ludwig",
+    "lastName": "Beethoven",
+    "email": "ludwig.beethoven@example.com",
+    "password": "FurEli$3Piano!",
+    "savedDestinations": [],
+    "photos": [],
+    "reviews": []
+  },
+  {
+    "firstName": "Johann",
+    "lastName": "Bach",
+    "email": "johann.bach@example.com",
+    "password": "Bach2TheFuture!",
+    "savedDestinations": [],
+    "photos": [],
+    "reviews": []
+  },
+  {
+    "firstName": "Wolfgang",
+    "lastName": "Mozart",
+    "email": "wolfgang.mozart@example.com",
+    "password": "Mozart4Ever!!",
+    "savedDestinations": [],
+    "photos": [],
+    "reviews": []
+  },
+  {
+    "firstName": "Johannes",
+    "lastName": "Brahms",
+    "email": "johannes.brahms@example.com",
+    "password": "BrahmsAndChill123!",
+    "savedDestinations": [],
+    "photos": [],
+    "reviews": []
+  },
+  {
+    "firstName": "Richard",
+    "lastName": "Wagner",
+    "email": "richard.wagner@example.com",
+    "password": "WagnerOnTheRun!",
+    "savedDestinations": [],
+    "photos": [],
+    "reviews": []
+  }
+]

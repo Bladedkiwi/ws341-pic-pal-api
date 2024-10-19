@@ -14,6 +14,7 @@ const User = require('../models/User');
  * @returns {Promise<void>}
  */
 async function getUsers(req,res){
+    // #swagger.tags = ['userSchema']
     const user = await User.find();
     if (user) {
         res.status(200).send(user);
@@ -28,6 +29,7 @@ async function getUsers(req,res){
  * @returns {Promise<void>}
  */
 async function getUserById(req,res) {
+    // #swagger.tags = ['userSchema']
     const user = await User.findById(req.params.id);
     res.status(200).send(user);
 }
@@ -40,6 +42,7 @@ async function getUserById(req,res) {
  * @returns {Promise<void>}
  */
 async function createUser(req,res) {
+    // #swagger.tags = ['userSchema']
     const user = new User(req.body);
     await user.save();
     res.status(200).send(user);
@@ -53,6 +56,7 @@ async function createUser(req,res) {
  * @returns {Promise<void>}
  */
 async function updateUser(req,res) {
+    // #swagger.tags = ['userSchema']
     const user = await User.findByIdAndUpdate(
         req.params.id,
         req.body,
@@ -74,12 +78,18 @@ async function updateUser(req,res) {
  * @returns {Promise<void>}
  */
 async function deleteUser(req,res) {
+    // #swagger.tags = ['userSchema']
     const user = await User.findByIdAndDelete(req.params.id);
     !user ?
         res.status(404).send('User not found')
         :
         res.status(200).send('User has been deleted.');
 }
+
+
+// POST /user/#id/uploadImage
+// POST /user/#id/upload destination
+// POST /user/#id/upload reviews 
 
 module.exports = {
     getUsers,

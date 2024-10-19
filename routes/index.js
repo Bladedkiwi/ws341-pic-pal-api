@@ -13,6 +13,8 @@ router.get('/', function (req, res) {
  */
 
 router.use('/user', require('./user'));
+router.use('/photo', require('./photo'));
+router.use('/review', require('./review'));
 router.use('/destination', require('./destination'));
 router.use('/api-docs', require('./swagger'));
 router.use('/review', require('./review'));

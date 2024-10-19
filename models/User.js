@@ -46,9 +46,9 @@ const userSchema = new mongoose.Schema({
             message: 'Must include a special character, number, and a capital'
     },
         // TODO: Check that this is the right way to define an array of objects for mongoose
-        destinations: String,
-        photos: String,
-        reviews: String,
+        destinations: [Object],
+        photos: [Object],
+        reviews: [Object],
 
     }
 }, {

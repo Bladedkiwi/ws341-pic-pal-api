@@ -16,6 +16,7 @@ const Photo = require('../models/Photo');
  * @returns {Promise<void>}
  */
 async function getPhotos(req,res){
+    // #swagger.tags = ['photoSchema']
     const photo = await Photo.find();
     if (photo) {
         res.status(200).send(photo);
@@ -30,6 +31,7 @@ async function getPhotos(req,res){
  * @returns {Promise<void>}
  */
 async function getPhotoById(req,res) {
+    // #swagger.tags = ['photoSchema']
     const photo = await Photo.findById(req.params.id);
     res.status(200).send(photo);
 }
@@ -42,6 +44,7 @@ async function getPhotoById(req,res) {
  * @returns {Promise<void>}
  */
 async function createPhoto(req,res) {
+    // #swagger.tags = ['photoSchema']
     const photo = new Photo(req.body);
     await photo.save();
     res.status(200).send(photo);
@@ -55,6 +58,7 @@ async function createPhoto(req,res) {
  * @returns {Promise<void>}
  */
 async function updatePhoto(req,res) {
+    // #swagger.tags = ['photoSchema']
     const photo = await Photo.findByIdAndUpdate(
         req.params.id,
         req.body,
@@ -76,12 +80,16 @@ async function updatePhoto(req,res) {
  * @returns {Promise<void>}
  */
 async function deletePhoto(req,res) {
+    // #swagger.tags = ['photoSchema']
     const photo = await Photo.findByIdAndDelete(req.params.id);
     !photo ?
         res.status(404).send('Photo not found')
         :
         res.status(200).send('Photo has been deleted.');
 }
+
+
+
 
 module.exports = {
     getPhotos,

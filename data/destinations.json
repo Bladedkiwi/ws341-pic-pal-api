@@ -1,0 +1,26 @@
+[
+  {
+    "city": "Paris",
+    "country": "France",
+    "photos": [],
+    "description": "The capital city of France, known for its art, fashion, and culture, featuring iconic landmarks.",
+    "tourismSpots": ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
+    "reviews": []
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "photos": [],
+    "description": "The capital city of Italy, famous for its nearly 3,000 years of globally influential art, architecture, and culture.",
+    "tourismSpots": ["Colosseum", "Vatican City", "Trevi Fountain"],
+    "reviews": []
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "photos": [],
+    "description": "The bustling capital of Japan, known for its modern skyscrapers, shopping districts, and rich cultural heritage.",
+    "tourismSpots": ["Tokyo Tower", "Shibuya Crossing", "Senso-ji Temple"],
+    "reviews": []
+  }
+]

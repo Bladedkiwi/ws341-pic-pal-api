@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Tokyo Tower at Dusk",
+    "photo": "http://example.com/photos/tokyo_tower_dusk.jpg",
+    "description": "The iconic Tokyo Tower illuminated against the evening sky, showcasing the city's vibrant nightlife."
+  },
+  {
+    "title": "Eiffel Tower Under the Stars",
+    "photo": "http://example.com/photos/eiffel_tower_stars.jpg",
+    "description": "A stunning view of the Eiffel Tower sparkling under a starry night in Paris, a romantic sight for all."
+  },
+  {
+    "title": "Colosseum at Sunset",
+    "photo": "http://example.com/photos/colosseum_sunset.jpg",
+    "description": "The ancient Colosseum bathed in golden light during sunset, a testament to Rome's rich history."
+  },
+  {
+    "title": "Cherry Blossoms in Tokyo",
+    "photo": "http://example.com/photos/cherry_blossoms_tokyo.jpg",
+    "description": "A breathtaking scene of cherry blossoms in full bloom, celebrating springtime beauty in Tokyo."
+  }
+]
