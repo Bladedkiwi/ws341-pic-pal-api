@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-
 /**
  * <h1>Review Schema</h1>
  * <ul>
- *     <li>userId</li>
+ *     <li>username</li>
  *     <li>stars</li>
  *     <li>comments</li>
  * </ul>
@@ -13,11 +12,7 @@ const mongoose = require('mongoose');
  */
 
 const reviewSchema = new mongoose.Schema({
-
-//TODO: Figure out whether we need only the userId or only the user's name - or both
-    userId: String,
     username: String,
-    // TODO: Adjust this to be a required max of 5 stars
     stars: {
         type: Number,
         maxLength: 5

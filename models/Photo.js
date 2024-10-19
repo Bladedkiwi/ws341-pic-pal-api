@@ -15,10 +15,21 @@ const mongoose = require('mongoose');
 
 const photoSchema = new mongoose.Schema({
     title: String,
-    imgUrl: String,
-    // TODO: Set a max string character amount
-    imgAlt:String,
-    description: String,
+    imgUrl: {
+        type: String,
+        required: true,
+        validator: function (value) {
+            return /(https?:\/\/.*\.(?:png|jpg))/i.test(value);
+        }
+    },
+    imgAlt:{
+        type: String,
+        maxLength: [100, 'Max of 200 characters'],
+    },
+    description: {
+        type: String,
+        maxLength:[ 400, 'Max of 400 characters']
+    },
 },
     {
         collection: 'photo',
