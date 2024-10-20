@@ -1,16 +1,13 @@
-const swaggerDefinitions = require("./swaggerToMongoose");
 const swaggerAutogen = require("swagger-autogen")();
-const User = require("./models/user");
-const Review = require("./models/review");
-const Destination = require("./models/destination");
-const Photo = require("./models/photo");
+
 
 const doc = {
   info: {
     title: "Users API",
     description: "DESC Users API",
   },
-  host: "localhost:3000",
+  host: "ws341-contacts-project.onrender.com",
+  // host:"localhost:3000",
   schemes: ["https", "http"],
   definitions: {
       user: {
