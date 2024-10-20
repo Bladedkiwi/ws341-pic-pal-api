@@ -8,6 +8,7 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
+    "https",
     "http"
   ],
   "paths": {
@@ -17,6 +18,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "default": {
+            "description": ""
           }
         }
       }
@@ -43,9 +47,6 @@
     },
     "/user/": {
       "get": {
-        "tags": [
-          "User"
-        ],
         "description": "",
         "responses": {
           "default": {
@@ -54,37 +55,14 @@
         }
       },
       "post": {
-        "tags": [
-          "User"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
             "in": "body",
+            "name": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string"
-                },
-                "lastName": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string",
-                  "format": "email"
-                },
-                "password": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "firstName",
-                "lastName",
-                "email",
-                "password"
-              ]
+              "$ref": "#/definitions/user"
             }
           }
         ],
@@ -97,9 +75,6 @@
     },
     "/user/{id}": {
       "get": {
-        "tags": [
-          "User"
-        ],
         "description": "",
         "parameters": [
           {
@@ -116,37 +91,20 @@
         }
       },
       "put": {
-        "tags": [
-          "User"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "body",
+            "name": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string"
-                },
-                "lastName": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string",
-                  "format": "email"
-                },
-                "password": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "firstName",
-                "lastName",
-                "email",
-                "password"
-              ]
+              "$ref": "#/definitions/user"
             }
           }
         ],
@@ -157,9 +115,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "User"
-        ],
         "description": "",
         "parameters": [
           {
@@ -178,9 +133,6 @@
     },
     "/destination/": {
       "get": {
-        "tags": [
-          "Destination"
-        ],
         "description": "",
         "responses": {
           "default": {
@@ -189,39 +141,14 @@
         }
       },
       "post": {
-        "tags": [
-          "Destination"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
             "in": "body",
+            "name": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "city": {
-                  "type": "string"
-                },
-                "country": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "tourismSpots": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "city",
-                "country",
-                "description",
-                "tourismSpots"
-              ]
+              "$ref": "#/definitions/destination"
             }
           }
         ],
@@ -234,9 +161,6 @@
     },
     "/destination/{id}": {
       "get": {
-        "tags": [
-          "Destination"
-        ],
         "description": "",
         "parameters": [
           {
@@ -253,39 +177,20 @@
         }
       },
       "put": {
-        "tags": [
-          "Destination"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "body",
+            "name": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "city": {
-                  "type": "string"
-                },
-                "country": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "tourismSpots": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "city",
-                "country",
-                "description",
-                "tourismSpots"
-              ]
+              "$ref": "#/definitions/destination"
             }
           }
         ],
@@ -296,9 +201,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "Destination"
-        ],
         "description": "",
         "parameters": [
           {
@@ -315,11 +217,18 @@
         }
       }
     },
+    "/api-docs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/review/": {
       "get": {
-        "tags": [
-          "Review"
-        ],
         "description": "",
         "responses": {
           "default": {
@@ -328,29 +237,14 @@
         }
       },
       "post": {
-        "tags": [
-          "Review"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
             "in": "body",
+            "name": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "comments": {
-                  "type": "string"
-                },
-                "stars": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "comments",
-                "stars"
-              ]
+              "$ref": "#/definitions/review"
             }
           }
         ],
@@ -363,9 +257,6 @@
     },
     "/review/{id}": {
       "get": {
-        "tags": [
-          "Review"
-        ],
         "description": "",
         "parameters": [
           {
@@ -382,29 +273,20 @@
         }
       },
       "put": {
-        "tags": [
-          "Review"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "body",
+            "name": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "comments": {
-                  "type": "string"
-                },
-                "stars": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "comments",
-                "stars"
-              ]
+              "$ref": "#/definitions/review"
             }
           }
         ],
@@ -415,9 +297,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "Review"
-        ],
         "description": "",
         "parameters": [
           {
@@ -436,9 +315,6 @@
     },
     "/photo/": {
       "get": {
-        "tags": [
-          "Photo"
-        ],
         "description": "",
         "responses": {
           "default": {
@@ -447,34 +323,14 @@
         }
       },
       "post": {
-        "tags": [
-          "Photo"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
             "in": "body",
+            "name": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string"
-                },
-                "photo": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "description": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "properties",
-                "photo",
-                "description"
-              ]
+              "$ref": "#/definitions/photo"
             }
           }
         ],
@@ -487,9 +343,6 @@
     },
     "/photo/{id}": {
       "get": {
-        "tags": [
-          "Photo"
-        ],
         "description": "",
         "parameters": [
           {
@@ -506,34 +359,20 @@
         }
       },
       "put": {
-        "tags": [
-          "Photo"
-        ],
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "body",
+            "name": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string"
-                },
-                "photo": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "description": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "properties",
-                "photo",
-                "description"
-              ]
+              "$ref": "#/definitions/photo"
             }
           }
         ],
@@ -544,9 +383,6 @@
         }
       },
       "delete": {
-        "tags": [
-          "Photo"
-        ],
         "description": "",
         "parameters": [
           {
@@ -560,6 +396,119 @@
           "default": {
             "description": ""
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "gitHubId": {
+          "type": "string",
+          "example": "22334454"
+        },
+        "username": {
+          "type": "string",
+          "example": "username"
+        },
+        "email": {
+          "type": "string",
+          "example": "username@jelly.com"
+        },
+        "profileUrl": {
+          "type": "string",
+          "example": "https://hello.com"
+        },
+        "destinationPhotos": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        },
+        "userPhotos": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        },
+        "reviews": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        }
+      }
+    },
+    "photo": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "example": "The Parade"
+        },
+        "imgUrl": {
+          "type": "string",
+          "example": "https://placecats.com/neo_banana/300/200"
+        },
+        "imgAlt": {
+          "type": "string",
+          "example": "Two dogs named Neo and Banana"
+        },
+        "description": {
+          "type": "string",
+          "example": "Photo of Neo and Banana such good boys"
+        }
+      }
+    },
+    "destination": {
+      "type": "object",
+      "properties": {
+        "photo": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        },
+        "city": {
+          "type": "string",
+          "example": "Rome"
+        },
+        "country": {
+          "type": "string",
+          "example": "Italy"
+        },
+        "photos": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        },
+        "description": {
+          "type": "string",
+          "example": "The capital city of Italy, famous for its nearly 3,000 years of globally influential art, architecture, and culture."
+        },
+        "tourismSpots": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        },
+        "reviews": {
+          "type": "array",
+          "example": [],
+          "items": {}
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "comments": {
+          "type": "string",
+          "example": "Very Good!"
+        },
+        "stars": {
+          "type": "number",
+          "example": 4
+        },
+        "username": {
+          "type": "string",
+          "example": "JumpingJelly"
         }
       }
     }

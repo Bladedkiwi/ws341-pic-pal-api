@@ -7,12 +7,12 @@ const findOrCreate = require('mongoose-findorcreate');
 /**
  * <h1>User Schema</h1>
  * <ul>
- *     <li>firstName</li>
- *     <li>lastName</li>
+ *     <li>gitHubId</li>
+ *     <li>username</li>
  *     <li>email</li>
- *     <li>password</li>
- *     <li>destinations</li>
- *     <li>photos</li>
+ *     <li>profileUrl</li>
+ *     <li>destinationPhotos</li>
+ *     <li>userPhotos</li>
  *     <li>reviews</li>
  *     </ul>
  *
