@@ -21,10 +21,39 @@ const findOrCreate = require('mongoose-findorcreate');
 
 
 const userSchema = new mongoose.Schema({
-    gitHubId: String,
-    username: String,
-    email: String,
-    profileUrl: String,
+    gitHubId: {
+        type: Number,
+        required: [true, 'GitHub ID is required'],
+        unique: true
+    },
+    username: {
+        type: String,
+        required: [true, 'Username is required'],
+        unique: true,
+        maxlength: 20
+    },
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        unique: true,
+        validate:  {
+            validator: function (value) {
+                return /^[\w\-.]+@([\w-]+\.)+[\w-]{2,}$/.test(value);
+            },
+            message: 'Please enter a valid email address.'
+        }
+    },
+    profileUrl: {
+        type: String,
+        required: [true, 'ProfileUrl is required'],
+        unique: true,
+        validate: {
+            validator: function (value) {
+                return /(https?:\/\/)?github\.com\/(?<author>[\w-]+)$/.test(value);
+            },
+            message: 'Please enter a valid GitHub Profile Url.'
+        }
+    },
     destinationPhotos: [String],
     userPhotos: [String],
     reviews: [String]
@@ -33,13 +62,5 @@ const userSchema = new mongoose.Schema({
 })
 userSchema.plugin(findOrCreate);
 
-// Might use this - or not.
-// userSchema.pre('save', async function (next) {
-//     console.log('Pre Save has been initialized');
-// })
-//
-// userSchema.pre(['updateOne', 'findByIdAndUpdate', 'findOneAndUpdate'], async function (next) {
-//     console.log('Pre Update/FindById/FindOne has been initialized');
-// })
 
 module.exports = mongoose.models.User || mongoose.model('User', userSchema);

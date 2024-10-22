@@ -18,8 +18,11 @@ const photoSchema = new mongoose.Schema({
     imgUrl: {
         type: String,
         required: true,
-        validator: function (value) {
-            return /(https?:\/\/.*\.(?:png|jpg))/i.test(value);
+        validate: {
+            validator: function(value) {
+                    return /(https?:\/\/.*\.(?:png|jpg))/i.test(value);
+                },
+                message: 'Please enter a valid image url.'
         }
     },
     imgAlt:{
@@ -36,5 +39,6 @@ const photoSchema = new mongoose.Schema({
     }
 
     )
+
 
 module.exports = mongoose.models.Photo || mongoose.model('Photo', photoSchema);
