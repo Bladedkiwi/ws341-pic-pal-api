@@ -59,7 +59,8 @@ passport.use(new GitHubStrategy({
     User.findOrCreate({
         gitHubId: profile.id,
         username: profile.username,
-        email: profile.emails[0].value
+        email: profile.emails[0].value,
+        profileUrl: profile.profileUrl,
     }, (err, existingUser) => {
         if (err) return done(err);
         if (existingUser) {

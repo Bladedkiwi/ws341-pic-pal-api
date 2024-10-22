@@ -15,7 +15,8 @@ const reviewSchema = new mongoose.Schema({
     username: String,
     stars: {
         type: Number,
-        maxLength: 5
+        required: [true, 'Please rate this Destination'],
+        max: 5
     },
     comments: String
 },

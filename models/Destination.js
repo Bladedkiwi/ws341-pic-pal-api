@@ -18,9 +18,16 @@ const mongoose = require('mongoose');
 
 
 const destinationSchema = new mongoose.Schema({
-    //TODO: Same thing with city - if that's possible. Maybe throw in a custom function that calls an outside api to check. An idea at least
-    city: String,
-    // TODO: Set any restrictions needed to make sure this is a country
+    city: {
+        type: String,
+        required: [true, 'City is required'],
+        validate: {
+            validator:function (value) {
+                return /^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$/.test(value);
+            },
+            message: 'Please enter a valid city.'
+        }
+    },
     country: String,
     photo:[String],
     tourismSpots:[String],
