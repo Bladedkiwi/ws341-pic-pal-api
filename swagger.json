@@ -47,6 +47,9 @@
     },
     "/user/": {
       "get": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -55,6 +58,9 @@
         }
       },
       "post": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -75,6 +81,9 @@
     },
     "/user/{id}": {
       "get": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -91,6 +100,9 @@
         }
       },
       "put": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -115,6 +127,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -133,6 +148,9 @@
     },
     "/destination/": {
       "get": {
+        "tags": [
+          "Destination"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -141,6 +159,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Destination"
+        ],
         "description": "",
         "parameters": [
           {
@@ -161,6 +182,9 @@
     },
     "/destination/{id}": {
       "get": {
+        "tags": [
+          "Destination"
+        ],
         "description": "",
         "parameters": [
           {
@@ -177,6 +201,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Destination"
+        ],
         "description": "",
         "parameters": [
           {
@@ -201,6 +228,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Destination"
+        ],
         "description": "",
         "parameters": [
           {
@@ -217,18 +247,11 @@
         }
       }
     },
-    "/api-docs/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/review/": {
       "get": {
+        "tags": [
+          "Review"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -237,6 +260,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Review"
+        ],
         "description": "",
         "parameters": [
           {
@@ -257,6 +283,9 @@
     },
     "/review/{id}": {
       "get": {
+        "tags": [
+          "Review"
+        ],
         "description": "",
         "parameters": [
           {
@@ -273,6 +302,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Review"
+        ],
         "description": "",
         "parameters": [
           {
@@ -297,6 +329,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Review"
+        ],
         "description": "",
         "parameters": [
           {
@@ -315,6 +350,9 @@
     },
     "/photo/": {
       "get": {
+        "tags": [
+          "Photo"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -323,6 +361,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Photo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -343,6 +384,9 @@
     },
     "/photo/{id}": {
       "get": {
+        "tags": [
+          "Photo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -359,6 +403,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Photo"
+        ],
         "description": "",
         "parameters": [
           {
@@ -383,6 +430,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Photo"
+        ],
         "description": "",
         "parameters": [
           {
