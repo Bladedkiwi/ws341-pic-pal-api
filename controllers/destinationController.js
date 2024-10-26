@@ -23,7 +23,7 @@ async function getDestinations(req,res){
  * @returns {Promise<void>}
  */
 async function getDestinationById(req,res) {
-    const destination = await Destination.findOne(req.params.id).lean();
+    const destination = await Destination.findById(req.params.id).lean();
     res.status(200).send(destination);
 }
 
