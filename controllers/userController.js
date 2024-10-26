@@ -1,8 +1,3 @@
-// TODO: Upload array of saved destinations
-// TODO: Upload new reviewID to array of reviews for User Object
-// TODO: Upload Photo to User and store photoID into array
-// TODO:
-
 
 const User = require('../models/User');
 
@@ -15,10 +10,14 @@ const User = require('../models/User');
  */
 //#swagger.tags=['user']
 async function getUsers(req,res){
-    const user = await User.find();
-    if (user) {
-        res.status(200).send(user);
-    }
+    //After noticing a way to get rid of the extra data from a mongoose model, then found a way to simply do it with mongoose using lean(). This returns plain JS Objects not the full Mongoose Documents
+    const user = await User.find().lean();
+
+    //Noticed while doing the Get User Jest Request that the whole mongoose object data with extra details and methods was being sent back in the response. Wasn't able to get a successful test because of that. So I adjusted the retrieval process to filter that out.
+
+    // const plainUser = user.map(user => user.toObject())
+
+    res.status(200).send(user);
 }
 
 /**
@@ -30,7 +29,7 @@ async function getUsers(req,res){
  */
 //#swagger.tags=['user']
 async function getUserById(req,res) {
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(req.params.id).lean();
     res.status(200).send(user);
 }
 

@@ -1,6 +1,3 @@
-// TODO: Send an array of reviews to Destination
-// TODO: Upload/Validate a review from User for specific destination
-//TODO: Figure out if we are grabbing a review by username also
 
 const Review = require('../models/Review');
 
@@ -12,7 +9,7 @@ const Review = require('../models/Review');
  * @returns {Promise<void>}
  */
 async function getReviews(req,res){
-    const review = await Review.find();
+    const review = await Review.find().lean();
     if (review) {
         res.status(200).send(review);
     }
@@ -26,7 +23,7 @@ async function getReviews(req,res){
  * @returns {Promise<void>}
  */
 async function getReviewById(req,res) {
-    const review = await Review.findById(req.params.id);
+    const review = await Review.findById(req.params.id).lean();
     res.status(200).send(review);
 }
 
