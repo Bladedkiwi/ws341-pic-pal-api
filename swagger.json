@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Users API",
-    "description": "DESC Users API",
+    "title": "PicPal API Documentation",
+    "description": "WDD341 Team 7 Final Project",
     "version": "1.0.0"
   },
   "host": "ws341-contacts-project.onrender.com",
