@@ -5,7 +5,7 @@
     "description": "DESC Users API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "ws341-contacts-project.onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
