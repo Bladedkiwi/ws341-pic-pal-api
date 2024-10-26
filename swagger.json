@@ -511,11 +511,6 @@
     "destination": {
       "type": "object",
       "properties": {
-        "photo": {
-          "type": "array",
-          "example": [],
-          "items": {}
-        },
         "city": {
           "type": "string",
           "example": "Rome"
@@ -524,14 +519,10 @@
           "type": "string",
           "example": "Italy"
         },
-        "photos": {
+        "photo": {
           "type": "array",
           "example": [],
           "items": {}
-        },
-        "description": {
-          "type": "string",
-          "example": "The capital city of Italy, famous for its nearly 3,000 years of globally influential art, architecture, and culture."
         },
         "tourismSpots": {
           "type": "array",

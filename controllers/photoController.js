@@ -1,10 +1,3 @@
-// TODO: Send array of Photos to a User - via username?
-// TODO: Upload a photo from User - via username?
-// TODO: Send/Upload photo to Destination
-// TODO: Upload array of photos for a given userID
-// TODO: Get photos via username or is it get saved destinations that have their photos for that destination
-
-
 
 const Photo = require('../models/Photo');
 
@@ -16,7 +9,7 @@ const Photo = require('../models/Photo');
  * @returns {Promise<void>}
  */
 async function getPhotos(req,res){
-    const photo = await Photo.find();
+    const photo = await Photo.find().lean();
     if (photo) {
         res.status(200).send(photo);
     }
@@ -30,7 +23,7 @@ async function getPhotos(req,res){
  * @returns {Promise<void>}
  */
 async function getPhotoById(req,res) {
-    const photo = await Photo.findById(req.params.id);
+    const photo = await Photo.findById(req.params.id).lean();
     res.status(200).send(photo);
 }
 
