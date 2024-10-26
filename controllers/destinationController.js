@@ -1,9 +1,3 @@
-//TODO: Pull from Photos DB a photo for each destination
-//TODO: Pull from Reviews DB the list of reviews for a given destination
-// TODO: Add destination to user destinations array
-// TODO:
-
-
 
 const Destination = require('../models/Destination');
 
@@ -15,7 +9,7 @@ const Destination = require('../models/Destination');
  * @returns {Promise<void>}
  */
 async function getDestinations(req,res){
-    const destination = await Destination.find();
+    const destination = await Destination.find().lean();
     if (destination) {
         res.status(200).send(destination);
     }
@@ -29,7 +23,7 @@ async function getDestinations(req,res){
  * @returns {Promise<void>}
  */
 async function getDestinationById(req,res) {
-    const destination = await Destination.findById(req.params.id);
+    const destination = await Destination.findOne(req.params.id).lean();
     res.status(200).send(destination);
 }
 
